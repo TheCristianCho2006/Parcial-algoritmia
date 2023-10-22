@@ -1,0 +1,117 @@
+"""
+Cristian Alonso Giraldo Caceres
+
+
+1.Realizar un algoritmo en Python que calcule el promedio de 3 asignaturas: Algoritmia y programación, Introducción a la Ingeniería y español, teniendo en cuenta la siguiente:
+Cada asignatura tiene un número de crédito siendo esto en la siguiente tabla:
+
+Asignatura                               Numero de creditos
+Algoritmia y programacion                3 Créditos
+Introduccion a al ingenieria             2 Créditos 
+Introduccion al contexto                 1 Crédito
+Matematica basica                        3 Créditos
+Logica matematica                        2 Créditos
+Español                                  3 Créditos
+
+Cada asignatura cuenta con 3 cortes
+
+Corte 1    Porcentaje
+
+1          30%
+2          30%
+3          40%
+
+En cada corte se evualuan talleres, quizzes, examenes parciales los cuales tienen la siguiente ponderacion
+
+
+Evaluacion    Porcentaje 
+Quizzes       30%
+Talleres      20%
+Parcial       50$
+
+
+Porcentaje de cada evaluacion para el corte 3 
+
+Evaluacion        Porcentaje
+Quizzes           15%
+Exposiciones      15%
+Talleres          10%
+Proyecto final    60%
+
+De acuerdo a lo anteriormente mencionado se debe calcular el promedio por cada asignatura teniendo en cuenta la tabla 2,3,4 y el promedio general teniendo en cuenta la
+tabla 1,2,3,4
+"""
+
+
+
+"""
+2. Use Python para simular el siguiente juego de azar:
+Dados la cantidad a apostar y el resultado del lanzamiento al azar de tres dados, retorne un mensaje a partir de las siguientes condiciones:
+• Si losidad apostada.
+• Si se obtienen dos valores iguales, el apostador gana 5 veces la cantidad apostada.
+• Si los valores son diferentes, pero las suma de ellos es mayor que 12, sale un mensaje “Recuperó su apuesta”.
+• Si los valores son diferentes, pero las suma de ellos está entre 8 y 12, el apostador pierde el 50% de su apuesta.
+• De lo contario, el apostador pierde el 100% de su apuesta.
+Por otro lado, el valor apostado debe ser múltiplo de 1000, sino es así, se debe mostrar el mensaje “Cantidad No Permitida” y no mostrar los valores generados por los dados.
+Para el mensaje de salida, se indica que el apostador ha ganado con un valor Positivo y que ha perdido con un valor Negativo.
+
+Valor de la apuesta       Valor dado 1     Valor dado 2   Valor dado3   Mensaje
+50.000                    5                5              3             500.000
+50.500                                                                  Cantidad no permitida
+50.000                    6                5              3             Recupero la apuesta
+50.000                    6                2              3             -25.000
+50.000                    1                2              3             -50.000
+"""
+
+Valor_de_la_apuesta = int(input("digite el valor de lo que aposto: "))
+Valor_dado_1 = int(input("digite el resultado del dado1: "))
+Valor_dado_2 = int(input("digite el resultado del dado2: "))
+Valor_dado_3 = int(input("digite el resultado del dado3: "))
+
+if (Valor_dado_1 == Valor_dado_2 and Valor_dado_3 == Valor_dado_1):
+    print("el apostador ganó: ", (Valor_de_la_apuesta * 10))
+
+if (Valor_dado_1 == Valor_dado_2 or Valor_dado_3 == Valor_dado_1 or Valor_dado_2 == Valor_dado_1):
+    print("el apostador ganó: ", (Valor_de_la_apuesta * 5))
+
+
+elif (Valor_dado_1 != Valor_dado_2 and Valor_dado_1 != Valor_dado_3):
+    if(Valor_dado_1 + Valor_dado_2 + Valor_dado_3) > 12:
+        print("El apostador recupero la apuesta")
+
+
+"""
+
+3. Sigma7 SAS es una empresa que se encuentra en Colombia y presta servicios de exportación a algunos países de América del Sur, América del Norte, América Central, 
+Europa y Asia. El costo por servicio se basa en el peso del envío y el continente al que va dirigido. En siguiente tabla se encuentran los valores de acuerdo a la zona a la 
+que se envía y el costo por cada Kg:
+
+Zona                        costo/kilogramo
+america del norte           97 dolares
+america central             70 dolares
+america del sur             50 dolares
+europa                      100 
+asia                        120 dolares
+
+Unas de las políticas de Sigma7 es que los envíos con un peso superior a 50Kg no son realizados por cuestiones de seguridad. Desarrolla un algoritmo en Python que reciba por 
+teclado la zona y el peso del envío que se desea realizar y calcular el cobro en pesos colombianos por él envió o el rechazo del mismo. 
+Nota: tener en cuenta que el cambio del dólar está a $ 4.750 pesos colombianos
+
+"""
+
+
+costo_por_kilogramo = {
+    "america_del_norte": 97,
+    "america_central": 70,
+    "america_del_sur": 50,
+    "europa": 100,
+    "asia": 120
+}
+
+
+Zona = input("digite la zona horaria: ")
+peso = int(input("digite el peso: "))
+if peso > 50:
+    print("envio rezhadao |limite de peso excedido")
+
+
